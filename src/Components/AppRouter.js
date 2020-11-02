@@ -5,23 +5,26 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
-import Home from "Routes/Home";
-import Search from "Routes/Search";
-import TV from "Routes/TV";
-import Detail from "Routes/Detail";
+import Home from "Routes/Home/HomePresenter";
+import Search from "Routes/Search/SearchPresenter";
+import TV from "Routes/TV/TVPresenter";
+import Detail from "Routes/Detail/DetailPresenter";
+import Header from "./Header";
 
 function AppRouter() {
   return (
     <>
       <Router>
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/tv" exact component={TV} />
-          <Route path="/tv/popular" render={() => <h1>whyNot</h1>} />
-          <Route path="/search" component={Search} />
-          <Route path="/detail" component={Detail} />
-          <Redirect from="*" to="/" />
-        </Switch>
+        <>
+          <Header />
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/tv" exact component={TV} />
+            <Route path="/search" component={Search} />
+            <Route path="/detail" component={Detail} />
+            <Redirect from="*" to="/" />
+          </Switch>
+        </>
       </Router>
     </>
   );

@@ -1,10 +1,10 @@
-import Header from "./Header";
 import AppRouter from "./AppRouter";
+import GlobalStyle from "./GlobalStyles";
 
 function App() {
   return (
     <>
-      <Header />
+      <GlobalStyle />
       <AppRouter></AppRouter>
     </>
   );
