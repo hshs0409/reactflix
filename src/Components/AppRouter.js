@@ -5,10 +5,10 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
-import Home from "Routes/Home/HomePresenter";
-import Search from "Routes/Search/SearchPresenter";
-import TV from "Routes/TV/TVPresenter";
-import Detail from "Routes/Detail/DetailPresenter";
+import Home from "Routes/Home";
+import Search from "Routes/Search";
+import TV from "Routes/TV";
+import Detail from "Routes/Detail";
 import Header from "./Header";
 
 function AppRouter() {
