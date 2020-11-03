@@ -1,7 +1,16 @@
 import React from "react";
+import propTypes from "prop-types";
+import Loader from "Components/Loader";
+import Section from "Components/Section";
 
-function Detail() {
-  return <div>Detail</div>;
-}
+const DetailPresenter = ({ result, loading, error }) => {
+  return loading ? <Loader /> : <Section title="Search"></Section>;
+};
 
-export default Detail;
+DetailPresenter.propTypes = {
+  movieResults: propTypes.object,
+  loading: propTypes.bool.isRequired,
+  error: propTypes.string,
+};
+
+export default DetailPresenter;
