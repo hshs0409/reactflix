@@ -1,7 +1,9 @@
 import React from "react";
 import propTypes from "prop-types";
+import styled from "styled-components";
 import Loader from "Components/Loader";
 import Section from "Components/Section";
+import Message from "Components/Message";
 
 const HomePresenter = ({ nowPlaying, upcoming, popular, error, loading }) =>
   loading ? (
@@ -20,6 +22,7 @@ const HomePresenter = ({ nowPlaying, upcoming, popular, error, loading }) =>
         {popular?.[0] &&
           popular.map((movie) => <span key={movie.id}>{movie.title}</span>)}
       </Section>
+      {error && <Message text={error} color={"#e74c3c"} />}
     </>
   );
 

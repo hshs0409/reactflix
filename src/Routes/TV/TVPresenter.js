@@ -1,8 +1,8 @@
 import React from "react";
 import propTypes from "prop-types";
-import styled from "styled-components";
 import Loader from "Components/Loader";
 import Section from "Components/Section";
+import Message from "Components/Message";
 
 const TVPresenter = ({ topRated, popular, airingToday, loading, error }) =>
   loading ? (
@@ -21,6 +21,7 @@ const TVPresenter = ({ topRated, popular, airingToday, loading, error }) =>
         {popular?.[0] &&
           popular.map((show) => <span key={show.id}>{show.name}</span>)}
       </Section>
+      {error && <Message text={error} color={"#e74c3c"} />}
     </>
   );
 
