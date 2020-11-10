@@ -4,7 +4,7 @@ import Loader from "Components/Loader";
 import Section from "Components/Section";
 
 const DetailPresenter = ({ result, loading, error }) => {
-  return loading ? <Loader /> : <Section title="Search"></Section>;
+  return loading ? <Loader /> : <Section title="Detail"></Section>;
 };
 
 DetailPresenter.propTypes = {

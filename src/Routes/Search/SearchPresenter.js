@@ -1,9 +1,10 @@
 import React from "react";
 import propTypes from "prop-types";
 import Loader from "Components/Loader";
+import styled from "styled-components";
 import Section from "Components/Section";
 import Message from "Components/Message";
-import styled from "styled-components";
+import Poster from "Components/Poster";
 
 const Container = styled.div`
   padding: 20px 20px;
@@ -12,7 +13,7 @@ const Container = styled.div`
 const Form = styled.form`
   width: 100%;
   font-size: 28px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 `;
 
 const Input = styled.input`
@@ -45,14 +46,29 @@ const SearchPresenter = ({
           {movieResults?.[0] && (
             <Section title="Movie Results">
               {movieResults.map((movie) => (
-                <span key={movie.id}>{movie.title}</span>
+                <Poster
+                  key={movie.id}
+                  id={movie.id}
+                  title={movie.title}
+                  imageUrl={movie.poster_path}
+                  rating={movie.vote_average}
+                  isMovie={true}
+                  year={movie.release_date?.substring(0, 4)}
+                />
               ))}
             </Section>
           )}
           {tvResults?.[0] && (
             <Section title="TV Show Results">
               {tvResults.map((show) => (
-                <span key={show.id}>{show.name}</span>
+                <Poster
+                  key={show.id}
+                  id={show.id}
+                  title={show.original_name}
+                  imageUrl={show.poster_path}
+                  rating={show.vote_average}
+                  year={show.first_air_date?.substring(0, 4)}
+                />
               ))}
             </Section>
           )}
