@@ -51,7 +51,6 @@ const Year = styled.span`
 `;
 
 const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => {
-  console.log(imageUrl);
   return (
     <Link to={isMovie ? `/movie/${id}` : `/show/${id}`}>
       <Container>
